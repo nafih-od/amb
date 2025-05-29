@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="why">
+        <section class="wrapper">
+            {% if why_instances %}
+                <ul>
+                    {% for why in why_instances %}
+                        <li>
+                            <div class="top">
+                                <div class="img">
+                                    <img src="{{ why.image.url }}" style="width:73px;, height:82px;">
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <h3>{{ why.title }}</h3>
+                                <p>{{ why.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+{% endblock %}
