@@ -1,0 +1,26 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="nop">
+        <section class="wrapper">
+            {% if nop_instances %}
+                <ul>
+                    {% for nop in nop_instances %}
+                        <li>
+                            <div class="top">
+                            </div>
+                            <div class="bottom">
+                                <h3>{{ nop.title }}</h3>
+                                <p>{{ nop.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+{% endblock %}

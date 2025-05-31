@@ -1,0 +1,24 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="fr">
+        <section class="wrapper">
+            {% if fr_instances %}
+                <ul>
+                    {% for fr in fr_instances %}
+                        <li>
+                            <div class="top">
+                                <h3>{{ fr.title }}</h3>
+                                <p>{{ fr.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+{% endblock %}
